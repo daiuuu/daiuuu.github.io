@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Mirror - Galería</title>
+    <link rel="icon" href="BlackMirrorImagenes/BlackMirrorPestañaDeNavegacion.webp" type="image/webp">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="inicio.html"><img src="BlackMirrorImagenes/BlackMirrorLogo.png" alt="Logo de Black Mirror"></a>
+            </div>
+            <nav class="nav-main">
+                <ul>
+                    <li><a href="inicio.html" data-es="INICIO" data-en="HOME">INICIO</a></li>
+                    <li><a href="temporadas.html" data-es="TEMPORADAS" data-en="SEASONS">TEMPORADAS</a></li>
+                    <li><a href="galeria.html" data-es="GALERÍA" data-en="GALLERY">GALERÍA</a></li>
+                    <li><a href="contacto.html" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.netflix.com/title/70264888" target="_blank" class="btn-main" data-es="MIRAR AHORA" data-en="WATCH NOW">MIRAR AHORA</a>
+            <button class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <a href="index.html#inicio" data-es="INICIO" data-en="HOME">INICIO</a>
+        <a href="temporadas.html" data-es="TEMPORADAS" data-en="SEASONS">TEMPORADAS</a>
+        <a href="galeria.html" data-es="GALERÍA" data-en="GALLERY">GALERÍA</a>
+        <a href="contacto.html" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a>
+        <a href="https://www.netflix.com/title/70264888" target="_blank" class="btn-main-mobile" data-es="MIRAR AHORA" data-en="WATCH NOW">MIRAR AHORA</a>
+    </nav>
+
+    <main>
+        <section id="galeria" class="screen screen-gallery">
+
+            <div class="gallery-carousel">
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria1.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria1.webp" alt="Galería Black Mirror 1">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria2.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria2.webp" alt="Galería Black Mirror 2">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria3.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria3.webp" alt="Galería Black Mirror 3">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria4.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria4.webp" alt="Galería Black Mirror 4">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria5.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria5.webp" alt="Galería Black Mirror 5">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria6.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria6.webp" alt="Galería Black Mirror 6">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria7.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria7.webp" alt="Galería Black Mirror 7">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria8.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria8.webp" alt="Galería Black Mirror 8">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria9.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria9.webp" alt="Galería Black Mirror 9">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria10.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria10.webp" alt="Galería Black Mirror 10">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria11.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria11.webp" alt="Galería Black Mirror 11">
+                </div>
+                <div class="gallery-card" data-bg="BlackMirrorImagenes/BlackMirrorGaleria12.webp">
+                    <img src="BlackMirrorImagenes/BlackMirrorGaleria12.webp" alt="Galería Black Mirror 12">
+                </div>
+            </div>
+            <div class="gallery-nav">
+                <button id="prev-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="next-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-lang">
+            <button id="btn-lang" class="btn-lang">
+                <img id="lang-flag" src="https://flagcdn.com/es.svg" alt="Bandera de España" style="width: 20px; border-radius: 50%;">
+                <span id="lang-text">ES</span>
+            </button>
+        </div>
+        <div class="footer-copy">
+            <p data-es="&copy; 2025 Todos los derechos reservados." data-en="&copy; 2025 All rights reserved.">&copy; 2025 Todos los derechos reservados.</p>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="galeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,669 @@
+/* Variables y estilos globales */
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-red: #D81F26;
+    --color-gray-metal: #7C7C7C;
+    --color-gray-dark: #2B2D2D;
+    --color-gray-footer: #999698;
+    --font-main: 'Michroma', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+.body-temporadas {
+    background-color: var(--color-gray-dark);
+    background-image: radial-gradient(ellipse at center, var(--color-gray-dark) 0%, var(--color-black) 75%);
+}
+
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-black);
+    z-index: 100;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(124, 124, 124, 0.2);
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    justify-self: start;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-main {
+    justify-self: center;
+}
+
+.nav-main ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-main a {
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-main a:hover,
+.nav-main a.active {
+    color: var(--color-red);
+}
+
+.btn-main {
+    justify-self: end;
+    border: 1px solid var(--color-white);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-main:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    justify-self: end;
+    z-index: 1001;
+    position: relative;
+    width: 24px;
+    height: 20px;
+}
+
+.hamburger .fa-bars {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.hamburger .fa-times {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: rotate(-90deg);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger.active .fa-bars {
+    opacity: 0;
+}
+
+.hamburger.active .fa-times {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+.nav-mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1000;
+    transition: right 0.5s ease-in-out;
+    border-left: 1px solid rgba(124, 124, 124, 0.2);
+}
+
+.nav-mobile.active {
+    right: 0;
+}
+
+.nav-mobile a {
+    font-size: 1.2rem;
+}
+
+.btn-main-mobile {
+    border: 1px solid var(--color-white);
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+
+/* Pantallas */
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pantalla 1 (Inicio) */
+.screen-1-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-1 h1 { font-size: 4rem; z-index: 10; }
+.screen-1 h2 { font-size: 1rem; font-weight: normal; margin-top: 0.5rem; z-index: 10; }
+
+.screen-1-img {
+    position: absolute;
+    width: 500px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slide-in 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slide-in {
+    to {
+        opacity: 0.5;
+        transform: translateX(0);
+    }
+}
+
+/* Pantalla 2 (Sobre) */
+.screen-2 {
+    background-color: var(--color-gray-dark);
+    background-image: radial-gradient(ellipse at center, var(--color-gray-dark) 0%, var(--color-black) 75%);
+}
+.screen-2 .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.screen-2 h2 { font-size: 2.5rem; }
+.screen-2 .text-content { max-width: 800px; line-height: 1.6; }
+.highlight { color: var(--color-red); font-weight: bold; text-shadow: 0 0 5px var(--color-red); }
+.image-gallery { display: flex; gap: 2rem; justify-content: center; }
+.img-container { width: 350px; height: auto; border-radius: 10px; overflow: hidden; transition: transform 0.4s ease; }
+.img-container:hover { transform: scale(1.1); }
+.img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Pantalla 3 (Final) */
+.screen-3 .screen-content { background-color: rgba(0,0,0,0.5); width: 100%; height: 100%; }
+.final-quote { font-size: 2.2rem; font-style: italic; }
+.img-container-final { width: 600px; max-width: 80%; border-radius: 10px; overflow: hidden; margin: 0 auto; }
+.img-container-final img { width: 100%; height: auto; display: block; }
+.img-container-final:hover { animation: glitch 1s infinite; }
+
+@keyframes glitch {
+  2%, 64% { transform: translate(2px, 0) skew(0deg); }
+  4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+  62% { transform: translate(0, 0) skew(5deg); }
+}
+
+/* Animaciones de Fade */
+.fade-in-element {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.subtitle.fade-in-element {
+    animation-delay: 0.5s;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+.fade-in-on-scroll.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-black);
+    padding: 2.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--color-gray-footer);
+    border-top: 1px solid rgba(124, 124, 124, 0.2);
+}
+
+.footer-lang { justify-self: start; }
+.footer-copy { justify-self: center; text-align: center; }
+.social-icons { justify-self: end; display: flex; gap: 2rem; }
+.btn-lang { background: none; border: 1px solid var(--color-gray-footer); color: var(--color-gray-footer); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-main); }
+.social-icons a { color: var(--color-red); font-size: 1.2rem; transition: transform 0.3s ease; }
+.social-icons a:hover { transform: scale(1.2); }
+
+/* --- Estilos galería --- */
+.screen-gallery {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    position: relative;
+}
+.screen-gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+.gallery-carousel { display: flex; gap: 1.5rem; position: absolute; bottom: 5%; right: 0; width: 50%; transform: translateX(25%); z-index: 1; }
+.gallery-card { width: 150px; height: 220px; border-radius: 10px; overflow: hidden; flex-shrink: 0; cursor: pointer; transition: transform 0.6s ease-out, opacity 0.6s ease-out, border 0.3s ease; border: 3px solid transparent; }
+.gallery-card.active { border-color: var(--color-red); transform: scale(1.05); }
+.gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-nav { position: absolute; top: 50%; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 0 2rem; transform: translateY(-50%); z-index: 20; }
+.gallery-nav button { background-color: rgba(0,0,0,0.3); border: 1px solid var(--color-white); color: var(--color-white); width: 50px; height: 50px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: background-color 0.3s ease; }
+.gallery-nav button:hover { background-color: var(--color-red); }
+
+/* --- Estilos temporadas --- */
+.screen-temporadas { justify-content: flex-start; padding-top: 120px; }
+.temporadas-container { max-width: 900px; width: 100%; text-align: center; }
+.temporadas-container h1 { font-size: 2.5rem; margin-bottom: 2rem; }
+.info-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-top: 1px solid var(--color-gray-metal); border-bottom: 1px solid var(--color-gray-metal); padding: 1rem 0; }
+.info-seasons { font-size: 1rem; }
+.info-rating { display: flex; align-items: center; gap: 1rem; }
+.rating-box { border: 1px solid var(--color-white); padding: 0.3rem 0.5rem; font-size: 0.9rem; }
+.sinopsis { max-width: 700px; margin: 0 auto 2.5rem auto; line-height: 1.7; font-size: 1.1rem; }
+.season-selector { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem; }
+
+/* --- Estilos contacto --- */
+.screen-contact { background-color: var(--color-black); padding-top: 100px; }
+.contact-container { width: 100%; max-width: 1200px; margin: 0 auto; text-align: left; }
+.contact-container h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+.contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: flex-start; }
+.contact-map { height: 400px; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.contact-form input, .contact-form textarea { background-color: transparent; border: 1px solid var(--color-gray-metal); color: var(--color-white); padding: 1rem; font-family: var(--font-main); font-size: 0.9rem; border-radius: 5px; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--color-gray-metal); }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--color-red); }
+.contact-form textarea { min-height: 150px; resize: vertical; }
+.contact-form .btn-main { align-self: flex-start; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .header { padding: 1rem; }
+    .header-container { grid-template-columns: auto 1fr; justify-content: space-between; }
+    .logo img { height: 35px; }
+    .nav-main, .btn-main { display: none; }
+    .hamburger { display: block; }
+
+    .screen { padding: 4rem 1rem; }
+    .screen-1 h1 { font-size: 2.5rem; }
+    .screen-1 h2 { font-size: 0.9rem; }
+    .screen-1-img { width: 300px; }
+    .screen-2 h2 { font-size: 2rem; }
+    .image-gallery { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .img-container { width: 90vw; height: auto; }
+    .final-quote { font-size: 1.5rem; }
+    .img-container-final { max-width: 90%; }
+
+    .footer { grid-template-columns: 1fr; gap: 1.5rem; justify-items: center; text-align: center; }
+    .footer-lang, .footer-copy, .social-icons { justify-self: center; }
+
+    /* Responsive galería */
+    .screen-gallery {
+        background-color: var(--color-black) !important;
+    }
+    .gallery-background {
+        display: none !important;
+    }
+    .gallery-carousel {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        transform: none;
+        gap: 1.5rem;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    .gallery-card {
+        width: 80vw;
+        height: 110vw;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .gallery-nav { display: none; }
+
+    .info-bar { flex-direction: column; gap: 1rem; }
+
+    .contact-content { grid-template-columns: 1fr; }
+}
+
+/* --- Estilos temporadas (Continuación) --- */
+.season-selector h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.season-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.season-item {
+    border: 1px solid var(--color-gray-metal);
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 5px;
+}
+
+.season-item:hover {
+    background-color: var(--color-red);
+    border-color: var(--color-red);
+}
+
+/* --- Estilos episode overlay --- */
+.episode-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding-top: 95px; /* Altura del header */
+}
+
+.episode-overlay.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.close-carousel-btn {
+    position: absolute;
+    top: 110px;
+    right: 30px;
+    left: auto;
+    font-size: 2.5rem;
+    color: var(--color-gray-metal);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2010;
+    background: none;
+    border: none;
+}
+
+.close-carousel-btn:hover {
+    color: var(--color-white);
+}
+
+.episode-carousel-container {
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden;
+    position: relative;
+}
+
+.episode-carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.episode-card {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 5rem;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: pan-effect 0.5s ease-out forwards;
+}
+
+@keyframes pan-effect {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.episode-card-img-container {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.episode-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.episode-card-content {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.episode-card-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.episode-card-content p {
+    font-size: 1rem;
+    color: var(--color-white);
+    line-height: 1.6;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-gray-metal);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2010;
+}
+
+.nav-arrow:hover {
+    color: var(--color-white);
+}
+
+.prev-episode {
+    left: 30px;
+}
+
+.next-episode {
+    right: 30px;
+}
+
+
+
+/* Estilos para el carrusel de episodios */
+.episode-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.episode-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-carousel-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: var(--color-gray-metal);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2010;
+    background: none;
+    border: none;
+}
+
+.close-carousel-btn:hover {
+    color: var(--color-white);
+}
+
+.episode-carousel-container {
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.episode-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.episode-card {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.episode-card img {
+    width: 100%;
+    max-width: 400px;
+    height: 225px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Transición para el efecto de zoom */
+}
+
+.episode-card img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.episode-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.episode-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-gray-metal);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2010;
+}
+
+.nav-arrow:hover {
+    color: var(--color-white);
+}
+
+.prev-episode {
+    left: 30px;
+}
+
+.next-episode {
+    right: 30px;
+}

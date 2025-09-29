@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Mirror - Temporadas</title>
+    <link rel="icon" href="BlackMirrorImagenes/BlackMirrorPestañaDeNavegacion.webp" type="image/webp">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="body-temporadas">
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="inicio.html"><img src="BlackMirrorImagenes/BlackMirrorLogo.png" alt="Logo de Black Mirror"></a>
+            </div>
+            <nav class="nav-main">
+                <ul>
+                    <li><a href="index.html" data-es="INICIO" data-en="HOME">INICIO</a></li>
+                    <li><a href="temporadas.html" data-es="TEMPORADAS" data-en="SEASONS">TEMPORADAS</a></li>
+                    <li><a href="galeria.html" data-es="GALERÍA" data-en="GALLERY">GALERÍA</a></li>
+                    <li><a href="contacto.html" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.netflix.com/title/70264888" target="_blank" class="btn-main" data-es="MIRAR AHORA" data-en="WATCH NOW">MIRAR AHORA</a>
+            <button class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <a href="inicio.html" data-es="INICIO" data-en="HOME">INICIO</a>
+        <a href="temporadas.html" data-es="TEMPORADAS" data-en="SEASONS">TEMPORADAS</a>
+        <a href="galeria.html" data-es="GALERÍA" data-en="GALLERY">GALERÍA</a>
+        <a href="contacto.html" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a>
+        <a href="https://www.netflix.com/title/70264888" target="_blank" class="btn-main-mobile" data-es="MIRAR AHORA" data-en="WATCH NOW">MIRAR AHORA</a>
+    </nav>
+
+    <main>
+        <section class="screen screen-temporadas">
+            <div class="temporadas-container fade-in-on-scroll">
+                <h1 class="fade-in-on-scroll">Black Mirror</h1>
+                <div class="info-bar fade-in-on-scroll">
+                    <div class="info-rating">
+                        <span class="rating-box">+16</span>
+                        <span data-es="violencia, sexo, lenguaje inapropiado" data-en="violence, sex, inappropriate language">violencia, sexo, lenguaje inapropiado</span>
+                    </div>
+                    <span class="info-seasons" data-es="7 temporadas" data-en="7 seasons">7 temporadas</span>
+                </div>
+                <p class="sinopsis fade-in-on-scroll" data-es="Historias de tecnología fuera de control. Crónicas nostálgicas de horrores que podrían haber ocurrido. Esta serie satírica y retorcida no conoce límites." data-en="Stories of technology out of control. Nostalgic chronicles of horrors that could have happened. This satirical and twisted series knows no bounds.">Historias de tecnología fuera de control. Crónicas nostálgicas de horrores que podrían haber ocurrido. Esta serie satírica y retorcida no conoce límites.</p>
+                <div class="season-selector fade-in-on-scroll">
+                    <h2 data-es="Elegí tu temporada" data-en="Choose your season">Elegí tu temporada</h2>
+                    <div class="season-list">
+                        <div class="season-item" data-season="1">Temporada 1</div>
+                        <div class="season-item" data-season="2">Temporada 2</div>
+                        <div class="season-item" data-season="3">Temporada 3</div>
+                        <div class="season-item" data-season="4">Temporada 4</div>
+                        <div class="season-item" data-season="5">Temporada 5</div>
+                        <div class="season-item" data-season="6">Temporada 6</div>
+                        <div class="season-item" data-season="7">Temporada 7</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="episode-overlay">
+        <button class="close-carousel-btn">&times;</button>
+        <div class="episode-carousel-container">
+            <div class="episode-carousel">
+                <!-- Las cartas de los episodios van a ser insertadas aca -->
+            </div>
+        </div>
+        <button class="nav-arrow prev-episode"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="nav-arrow next-episode"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-lang">
+            <button id="btn-lang" class="btn-lang">
+                <img id="lang-flag" src="https://flagcdn.com/es.svg" alt="Bandera de España" style="width: 20px; border-radius: 50%;">
+                <span id="lang-text">ES</span>
+            </button>
+        </div>
+        <div class="footer-copy">
+            <p data-es="&copy; 2025 Todos los derechos reservados." data-en="&copy; 2025 All rights reserved.">&copy; 2025 Todos los derechos reservados.</p>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="temporadas.js"></script>
+</body>
+</html>
